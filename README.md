@@ -2,6 +2,7 @@
 
 ## This project has two parts:
 Backend API → .NET 8 + SQL Server
+Postman collection can be found [here](https://github.com/selfmadecode/EBooking/blob/master/EBooking.postman_collection.json)
 
 Frontend → React
 
