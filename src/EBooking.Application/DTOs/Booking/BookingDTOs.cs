@@ -2,14 +2,14 @@
 
 namespace EBooking.Application.DTOs.Booking;
 
-public class CreateBookingDto
+public record CreateBookingDto
 {
     public Guid EventId { get; set; }
     [Range(1, int.MaxValue, ErrorMessage = "Number of tickets must be at least 1.")]
     public int NumberOfTickets { get; set; }
 }
 
-public class BookingResponseDto
+public record BookingResponseDto
 {
     public Guid Id { get; set; }
     public string? BookingReference { get; set; }

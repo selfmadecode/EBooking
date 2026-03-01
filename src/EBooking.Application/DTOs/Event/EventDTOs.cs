@@ -2,7 +2,7 @@
 
 namespace EBooking.Application.DTOs.Event
 {
-    public class CreateEventDto
+    public record CreateEventDto
     {
         public required string Title { get; set; }
         public string Description { get; set; }
@@ -14,7 +14,7 @@ namespace EBooking.Application.DTOs.Event
         public string? ImageUrl { get; set; }
     }
 
-    public class UpdateEventDto
+    public record UpdateEventDto
     {
         public string? Title { get; set; }
         public string? Description { get; set; }
@@ -27,7 +27,7 @@ namespace EBooking.Application.DTOs.Event
         public EventStatus? Status { get; set; }
     }
 
-    public class EventResponseDto
+    public record EventResponseDto
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
