@@ -14,6 +14,7 @@ public record AuthResponseDto
     public required string RefreshToken { get; set; }
     public DateTime ExpiresAt { get; set; }
     public UserDto User { get; set; } = null!;
+    public List<string> Roles { get; set; } = [];
 }
 
 public record UserDto
