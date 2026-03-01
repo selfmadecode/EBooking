@@ -1,7 +1,6 @@
-﻿namespace EBooking.Application.Interfaces
+﻿namespace EBooking.Application.Interfaces;
+
+public interface IPaymentGatewayService
 {
-    public interface IPaymentGatewayService
-    {
-        Task<bool> ProcessPaymentAsync(decimal amount, string paymentMethod, string? cardNumber);
-    }
+    Task<bool> ProcessPaymentAsync(decimal amount, string paymentMethod, string? cardNumber);
 }

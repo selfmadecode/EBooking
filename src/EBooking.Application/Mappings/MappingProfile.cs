@@ -10,7 +10,6 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        // Event mappings
         CreateMap<CreateEventDto, Event>()
             .ForMember(dest => dest.Ticket,
                 opt => opt.MapFrom(src => new Ticket
@@ -30,7 +29,6 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.Status,
                 opt => opt.MapFrom(src => src.Status.ToString()));
 
-        // Booking mappings
         CreateMap<Booking, BookingResponseDto>()
             .ForMember(d => d.EventTitle, o => o.MapFrom(s => s.Event != null ? s.Event.Title : string.Empty))
             .ForMember(d => d.EventLocation, o => o.MapFrom(s => s.Event != null ? s.Event.Location : string.Empty))

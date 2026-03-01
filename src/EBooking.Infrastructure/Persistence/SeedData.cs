@@ -1,5 +1,6 @@
 ﻿using EBooking.Application.Common;
 using EBooking.Domain.Entities;
+using EBooking.Domain.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,16 +17,17 @@ public static class SeedData
         email: "appuser@ebookingapi.com",
         fullName: "EBooking AppUser",
         password: "appUser@12345",
-        roleName: RoleHelper.User);
+        roleName: RoleHelper.User, context);
 
         await EnsureUserAsync(userManager, roleManager,
         email: "admin@ebookingapi.com",
         fullName: "EBooking Admin",
         password: "appAdmin@12345",
-        roleName: RoleHelper.Admin);
+        roleName: RoleHelper.Admin, context);
     }
 
-    private static async Task EnsureUserAsync(UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager, string email, string fullName, string password, string roleName)
+    private static async Task EnsureUserAsync(UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager,
+        string email, string fullName, string password, string roleName, ApplicationDbContext context)
     {
         var user = await userManager.FindByEmailAsync(email);
         if (user != null)
@@ -54,5 +56,8 @@ public static class SeedData
             var errors = string.Join(", ", result.Errors.Select(e => e.Description));
             throw new InvalidOperationException($"Failed to create user '{email}': {errors}");
         }
+        var wallet = new Wallet { UserId = user.Id };
+        await context.Wallets.AddAsync(wallet);
+        await context.SaveChangesAsync();
     }
 }
