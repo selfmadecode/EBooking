@@ -6,7 +6,7 @@ public record TopUpWalletDto
 {
     [Range(1, double.MaxValue, ErrorMessage = "Amount must be greater than zero.")]
     public decimal Amount { get; set; }
-    public string PaymentMethod { get; set; } = "SimulatedCard";
+    public string PaymentMethod { get; set; } = "Online";
     public string? CardNumber { get; set; }
 }
 
