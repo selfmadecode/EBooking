@@ -1,0 +1,576 @@
+{
+  "info": {
+    "_postman_id": "f39b3fb1-cbe6-4c9c-9d63-244fc4c86cff",
+    "name": "EBooking",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "21538814"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"admin@ebookingapi.com\",\r\n  \"password\": \"appAdmin@12345\"\r\n//   \"email\": \"appuser@ebookingapi.com\",\r\n//   \"password\": \"appUser@12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Auth/login",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"fullName\": \"string\",\r\n  \"email\": \"testuser@ebookingapi.com\",\r\n  \"password\": \"appAdmin@12345\",\r\n  \"confirmPassword\": \"appAdmin@12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Auth/register",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Event",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNiMzkxNGU4LTBiYTItNGRkMy1lY2U4LTA4ZGU3NzFjNzk2MCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6IkVCb29raW5nIEFkbWluIiwianRpIjoiYTJmM2E0MDctZTk3Zi00YWY3LThkMGMtMTdlMzEyY2UxZTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3NzI0MDY0MjgsImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.jQ8XqSC2v4URRvDydXn0xS8b3fc1gr_V8_z7MHFfAe0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Great Test event\",\r\n  \"description\": \"description tag\",\r\n  \"location\": \"Abuja\",\r\n  \"eventDate\": \"2026-03-02T22:58:08.412Z\",\r\n  \"eventEndDate\": \"2026-03-28T22:58:08.412Z\",\r\n  \"ticketPrice\": 10,\r\n  \"totalTickets\": 100,\r\n  \"imageUrl\": \"img url\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Events",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNiMzkxNGU4LTBiYTItNGRkMy1lY2U4LTA4ZGU3NzFjNzk2MCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6IkVCb29raW5nIEFkbWluIiwianRpIjoiYTJmM2E0MDctZTk3Zi00YWY3LThkMGMtMTdlMzEyY2UxZTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3NzI0MDY0MjgsImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.jQ8XqSC2v4URRvDydXn0xS8b3fc1gr_V8_z7MHFfAe0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Updated Test event\",\r\n  \"description\": \"Updated description tag\",\r\n  \"location\": \"Updated Abuja\",\r\n  \"eventDate\": \"2026-03-02T22:58:08.412Z\",\r\n  \"eventEndDate\": \"2026-03-28T22:58:08.412Z\",\r\n  \"ticketPrice\": 100,\r\n  \"totalTickets\": 1000,\r\n  \"imageUrl\": \"update img url\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Events/512d8c5a-7541-4dd7-88c8-08de7721b4cd",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Events",
+                "512d8c5a-7541-4dd7-88c8-08de7721b4cd"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getall",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNiMzkxNGU4LTBiYTItNGRkMy1lY2U4LTA4ZGU3NzFjNzk2MCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6IkVCb29raW5nIEFkbWluIiwianRpIjoiYTJmM2E0MDctZTk3Zi00YWY3LThkMGMtMTdlMzEyY2UxZTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3NzI0MDY0MjgsImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.jQ8XqSC2v4URRvDydXn0xS8b3fc1gr_V8_z7MHFfAe0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Events",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "active",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNiMzkxNGU4LTBiYTItNGRkMy1lY2U4LTA4ZGU3NzFjNzk2MCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6IkVCb29raW5nIEFkbWluIiwianRpIjoiYTJmM2E0MDctZTk3Zi00YWY3LThkMGMtMTdlMzEyY2UxZTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3NzI0MDY0MjgsImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.jQ8XqSC2v4URRvDydXn0xS8b3fc1gr_V8_z7MHFfAe0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Events/active",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Events",
+                "active"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNiMzkxNGU4LTBiYTItNGRkMy1lY2U4LTA4ZGU3NzFjNzk2MCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6IkVCb29raW5nIEFkbWluIiwianRpIjoiYTJmM2E0MDctZTk3Zi00YWY3LThkMGMtMTdlMzEyY2UxZTIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3NzI0MDY0MjgsImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.jQ8XqSC2v4URRvDydXn0xS8b3fc1gr_V8_z7MHFfAe0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Events/512d8c5a-7541-4dd7-88c8-08de7721b4cd",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Events",
+                "512d8c5a-7541-4dd7-88c8-08de7721b4cd"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "book",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImY2ZDkxYTg3LTMyNTUtNGVlOS1iNjA4LTA4ZGU3NzI4ZmM0NiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InRlc3R1c2VyQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6InN0cmluZyIsImp0aSI6IjBiODNhN2NhLTM3M2QtNDliMS1iZDc5LTAzYzMxZDdkNGVmZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE3NzI0MTExMTksImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.xi0tsoPS-uaWRI105tbliTafXaZa-VC4QIiFzA5SmXY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventId\": \"512d8c5a-7541-4dd7-88c8-08de7721b4cd\",\r\n  \"numberOfTickets\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Bookings",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Bookings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "my bookings",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImY2ZDkxYTg3LTMyNTUtNGVlOS1iNjA4LTA4ZGU3NzI4ZmM0NiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InRlc3R1c2VyQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6InN0cmluZyIsImp0aSI6IjBiODNhN2NhLTM3M2QtNDliMS1iZDc5LTAzYzMxZDdkNGVmZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE3NzI0MTExMTksImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.xi0tsoPS-uaWRI105tbliTafXaZa-VC4QIiFzA5SmXY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventId\": \"512d8c5a-7541-4dd7-88c8-08de7721b4cd\",\r\n  \"numberOfTickets\": 2147483647\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Bookings/my",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Bookings",
+                "my"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "booking",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImY2ZDkxYTg3LTMyNTUtNGVlOS1iNjA4LTA4ZGU3NzI4ZmM0NiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InRlc3R1c2VyQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6InN0cmluZyIsImp0aSI6IjBiODNhN2NhLTM3M2QtNDliMS1iZDc5LTAzYzMxZDdkNGVmZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE3NzI0MTExMTksImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.xi0tsoPS-uaWRI105tbliTafXaZa-VC4QIiFzA5SmXY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventId\": \"512d8c5a-7541-4dd7-88c8-08de7721b4cd\",\r\n  \"numberOfTickets\": 2147483647\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Bookings/db33417a-1bb8-427f-19c6-08de772cb85d",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Bookings",
+                "db33417a-1bb8-427f-19c6-08de772cb85d"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "cancel",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImY2ZDkxYTg3LTMyNTUtNGVlOS1iNjA4LTA4ZGU3NzI4ZmM0NiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InRlc3R1c2VyQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6InN0cmluZyIsImp0aSI6IjBiODNhN2NhLTM3M2QtNDliMS1iZDc5LTAzYzMxZDdkNGVmZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE3NzI0MTExMTksImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.xi0tsoPS-uaWRI105tbliTafXaZa-VC4QIiFzA5SmXY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"eventId\": \"512d8c5a-7541-4dd7-88c8-08de7721b4cd\",\r\n  \"numberOfTickets\": 2147483647\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Bookings/db33417a-1bb8-427f-19c6-08de772cb85d/cancel",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Bookings",
+                "db33417a-1bb8-427f-19c6-08de772cb85d",
+                "cancel"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Wallet",
+      "item": [
+        {
+          "name": "get",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImY2ZDkxYTg3LTMyNTUtNGVlOS1iNjA4LTA4ZGU3NzI4ZmM0NiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InRlc3R1c2VyQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6InN0cmluZyIsImp0aSI6IjBiODNhN2NhLTM3M2QtNDliMS1iZDc5LTAzYzMxZDdkNGVmZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE3NzI0MTExMTksImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.xi0tsoPS-uaWRI105tbliTafXaZa-VC4QIiFzA5SmXY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7226/api/Wallet",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Wallet"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "topup",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImY2ZDkxYTg3LTMyNTUtNGVlOS1iNjA4LTA4ZGU3NzI4ZmM0NiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InRlc3R1c2VyQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6InN0cmluZyIsImp0aSI6IjBiODNhN2NhLTM3M2QtNDliMS1iZDc5LTAzYzMxZDdkNGVmZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE3NzI0MTExMTksImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.xi0tsoPS-uaWRI105tbliTafXaZa-VC4QIiFzA5SmXY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"amount\": 100,\r\n  \"paymentMethod\": \"string\",\r\n  \"cardNumber\": \"string\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Wallet/topup",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Wallet",
+                "topup"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "transactions",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImY2ZDkxYTg3LTMyNTUtNGVlOS1iNjA4LTA4ZGU3NzI4ZmM0NiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InRlc3R1c2VyQGVib29raW5nYXBpLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6InN0cmluZyIsImp0aSI6IjBiODNhN2NhLTM3M2QtNDliMS1iZDc5LTAzYzMxZDdkNGVmZiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE3NzI0MTExMTksImlzcyI6IkVCb29raW5nQVBJIiwiYXVkIjoiRUJvb2tpbmdDbGllbnQifQ.xi0tsoPS-uaWRI105tbliTafXaZa-VC4QIiFzA5SmXY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"amount\": 1,\r\n  \"paymentMethod\": \"string\",\r\n  \"cardNumber\": \"string\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7226/api/Wallet/transactions",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7226",
+              "path": [
+                "api",
+                "Wallet",
+                "transactions"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
